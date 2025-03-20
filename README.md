@@ -50,9 +50,16 @@ scp -i "filename.pem" filename.pem ec2-user@:public_ip_of_presentation_instance/
 
 ssh -i filename.pem ec2-user@public_ip_of_presentation_instance  
 
-### if You want to connect database instance  
+### if You want to connect database instance  first you neet to connect application Instance
 
 scp -i "filename.pem" filename.pem ec2-user@:private_ip_of_applicaltion_instance/home/ec2-user/
+
+ssh -i filename.pem ec2-user@private_ip_of_application_instance 
+
+now then you can ssh database Instance 
+
+ssh -i filename.pem ec2-user@private_ip_of_database_instance 
+
 ```
 
 #####    3. Now connect to the application instance
